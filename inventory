@@ -1,2 +1,5 @@
+[web_servers]
 ubuntuadmin@10.0.2.5
+
+[db_servers]
 openSUSE@10.0.2.6
