@@ -1,0 +1,23 @@
+---
+
+- hosts: ubuntuadmin@10.0.2.5
+  become: true
+  tasks:
+
+  - name: install apache2 and php for ubuntu servers
+    apt:
+      name:
+        - apache2
+        - libapache2-mod-php
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: openSUSE@10.0.2.6
+  become: true
+  tasks:
+
+  - name: install mariadb server on openSUSE
+    zypper:
+      name: mariadb
+      state: latest
+    when: ansible_distribution == "openSUSE Tumbleweed"
